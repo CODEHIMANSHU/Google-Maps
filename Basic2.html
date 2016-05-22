@@ -1,0 +1,45 @@
+<!--Use of window.onload to load the Google Maps API after the page has fully loaded-->
+<!DOCTYPE htm>
+<html>
+	<head>
+		<title>
+			Map
+		</title>
+		<script>
+			function preview()
+			{
+				//object to define properties of map
+				var mapproperty =
+				{
+					//center: LatLng defines latitude and longtitude of center of map
+					center:new google.maps.LatLng(28.6143845,77.3587834),
+					//zoom starts from 0 (whole earth) and zooms in with increasing value
+					zoom:16,
+					//4 types of map- ROADMAP, SATELLITE, HYBRID, TERRAIN
+					mapTypeId:google.maps.MapTypeId.ROADMAP
+				};
+				//object to create a new map in div with id "college"
+  				var map = new google.maps.Map(document.getElementById("college"),mapproperty);
+			}	
+			function load()
+			{	
+				var script = document.createElement("script");
+				script.type = "text/javascript";
+				script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyD6YMawC9G-GGd1k276XmGibZBxcmscYns&callback=preview";
+				document.body.appendChild(script);
+			}		
+			window.onload = load;
+		</script>
+	</head>
+	<body>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Dr._Seuss_WikiWorld.png/300px-Dr._Seuss_WikiWorld.png">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/SubstanceandShadow.jpg/250px-SubstanceandShadow.jpg">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Tammany_Ring%2C_Nast_crop.jpg/250px-Tammany_Ring%2C_Nast_crop.jpg">
+	<!--This element loads after the window loads completely-->
+		<div id="college" style="width:300px;height:300px;margin-left:70%">
+		</div>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Animhorse.gif/200px-Animhorse.gif">
+	<img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Donald_Duck.svg/220px-Donald_Duck.svg.png">
+	<img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Donald_Duck_in_Mickey_Mouse_Clubhouse.png/220px-Donald_Duck_in_Mickey_Mouse_Clubhouse.png">
+	</body>
+</html>
